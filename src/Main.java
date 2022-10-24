@@ -9,26 +9,28 @@ public class Main {
     private static String taskReverse;
     public static void main(String[] args) {
 
-        for (int i = 0; i < 15; i++) {
-
+        while (taskList.size() < 15) {
             formTask();
 
-
         }
-        System.out.println("прямой "+taskList);
+        getTask();
+
 
 
     }
-    private static void   formTask() {
 
-             task=number1.nextInt(2,9)+"*"+number2.nextInt(2,9);
-             taskReverse=new StringBuffer(task).reverse().toString();
-        for (String str:taskList ) {
-            if (task.equals(str)) {
-                System.out.println("**********---"+task);
-            }
+    private static void getTask() {
+        Iterator<String> it = taskList.iterator();
+        while (it.hasNext()) {
+            String n = it.next();
+            System.out.println(n);
         }
 
+    }
+
+    private static void   formTask() {
+             task=number1.nextInt(2,9)+"*"+number2.nextInt(2,9);
+             taskReverse=new StringBuffer(task).reverse().toString();
         Iterator<String> it = taskList.iterator();
         while (it.hasNext()) {
             String n = it.next();
@@ -37,7 +39,6 @@ public class Main {
             }
         }
              taskList.add(task);
-
     }
 
 
