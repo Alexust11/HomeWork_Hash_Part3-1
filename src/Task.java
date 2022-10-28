@@ -3,31 +3,32 @@ import java.util.Random;
 
 public class Task {
     private  String task;
-     private Random number1=new Random();
-    private Random number2=new Random();
+    private final Integer value1;
+    private final Integer value2;
 
-
-    public Task() {
-
+    public Task(Integer value1, Integer value2){
+        this.value1 = value1;
+        this.value2 = value2;
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Task task1)) return false;
-        return Objects.equals(task, task1.task);
+        Task task = (Task) o;
+
+        return (value1 == task.value1 && value2 == task.value2)||(value1 == task.value2 && value2 == task.value1);
+
     }
+
+
+
 
     @Override
     public int hashCode() {
-        return Objects.hash(task);
+        return Objects.hash(value1, value2);
     }
 
-    public String getTask() {
-        task=number1.nextInt(2,9)+"*"+number2.nextInt(2,9);
-        return task;
+    @Override
+    public String toString() {
+        return value1+"*"+value2;
     }
-
-
-
 }
