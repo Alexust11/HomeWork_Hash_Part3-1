@@ -20,7 +20,9 @@ public class Task {
     }
 
 
-
+    public String getTask() {
+        return this.value1.toString()+"*"+this.value2.toString();
+    }
 
     @Override
     public int hashCode() {
@@ -29,6 +31,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return value1+"*"+value2;
+        String s=this.value1+"*"+this.value2;
+        return s;
     }
 }

@@ -12,7 +12,7 @@ public class Main {
             Integer n2=random.nextInt(2,9);
             Task task=new Task(n1, n2);
             taskList.add(task.toString());
-            task.toString();
+            System.out.println(task);
         }
 
         System.out.println(taskList);
